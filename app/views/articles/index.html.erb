@@ -1,0 +1,17 @@
+
+<h1 >All Articles 📃</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= article.title %></li>
+    <%= link_to "show", article_path(article) %>
+    <%= link_to "edit", edit_article_path(article) %>
+    <%= link_to "Delete",
+    article_path(article),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+  <% end %>
+</ul>
+
+   <%= link_to "create new",
+    new_article_path %>
